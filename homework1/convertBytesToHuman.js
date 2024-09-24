@@ -18,7 +18,7 @@
  */
 
 export default function convertBytesToHuman(bytes) {
-  if (typeof bytes !== 'number' || bytes < 0 || isNaN(bytes) || !isFinite(bytes)) {
+  if (typeof bytes !== 'number' || bytes < 0 || !isFinite(bytes)) {
     return false;
   }
 

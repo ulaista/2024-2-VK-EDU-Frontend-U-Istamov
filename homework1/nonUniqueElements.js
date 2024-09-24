@@ -26,7 +26,8 @@ nonUniqueElements([10, 9, 10, 10, 9, 8]) == [10, 9, 10, 10, 9]
 
 export default function nonUniqueElements(data) {
   const frequency = data.reduce((countMap, item) => {
-    countMap[item] = (countMap[item] || 0) + 1;
+    countMap[item] ??= 0;
+    countMap[item]++;
     return countMap;
   }, {});
 
