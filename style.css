@@ -1,0 +1,151 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    background-color: #CADCFC;
+    color: #00246B;
+    font-size: 15px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.input-container {
+    position: fixed;
+    bottom: 10px;
+    width: 77vw;
+    background-color: #6d81a4;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    border-radius: 14px;
+    padding: 11px;
+    z-index: 1;
+}
+
+
+.form-input {
+    background-color: #6d81a4;
+    color: #00246B;
+    flex-grow: 1;
+    border: 0;
+    outline: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+::placeholder {
+    color: #00246B;
+}
+
+.send-button {
+    background: none;
+    border: none;
+    color: #00246B;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.message-list {
+    margin: 7vh 7vh 0vh 7vh;
+    width: 77vw;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px;
+    overflow-y: auto;
+    height: calc(100vh - 7vh - 60px);
+}
+@media screen and (max-width: 600px) {
+    .input-container {
+        width: 100%;
+        bottom: 0px;
+        border-radius: 0px;
+    }
+    .message-list {
+        padding-bottom: 10px;
+    }
+}
+.message-from-user {
+    justify-self: flex-start;
+    align-self: flex-end;
+    background-color: #CADCFC;
+    border: 1px solid #00246B;
+    border-radius: 4px;
+    margin: 4px 0;
+    padding: 8px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: stretch;
+}
+
+input[type=submit] {
+    visibility: collapse;
+}
+
+.middle-header {
+    background-color: #00246B;
+    position: fixed;
+    top: 0px;
+    display: flex;
+    height: 7vh;
+    width: 100%;
+    align-items: center;
+    padding-left: 5%;
+    padding-right: 2%;
+    justify-content: space-between;
+}
+
+.header-tools {
+    display: flex;
+    align-items: center;
+}
+
+.header-tool {
+    color: #CADCFC;
+    background: none;
+    border: none;
+    border-radius: 47%;
+    cursor: pointer;
+    padding: 1px;
+}
+
+.header-tool > span {
+    padding: 7px;
+}
+
+.header-tool:hover {
+    backdrop-filter: brightness(77%);
+}
+
+.contact-chat-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    font-size: 24px;
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.info-chat-contact {
+    color: #CADCFC;
+    padding: 1vw;
+    cursor: pointer;
+}
+
