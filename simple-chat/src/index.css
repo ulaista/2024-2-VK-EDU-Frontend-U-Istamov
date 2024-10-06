@@ -3,6 +3,7 @@
     --text-color: #00246B;
     --placeholder-color: #00246B;
     --input-shadow-color: #a4bae0;
+    --input-background-color: #b1c4e2;
     --message-background-color: #CADCFC;
     --message-shadow-color: rgba(219, 235, 241, 0.796);
     --small-time-color: #555;
@@ -33,6 +34,7 @@ body {
 }
 
 .input-container {
+    background-color: var(--input-background-color);
     position: fixed;
     bottom: 10px;
     width: 77vw;
@@ -71,10 +73,10 @@ body {
 .message-list {
     padding-right: 2vw;
     margin: 7vh 7vh 7vh 7vh;
-    width: 77vw;
+    width: 80vw;
     display: flex;
     flex-direction: column;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     overflow-y: auto;
     height: calc(100vh - 7vh - 60px);
 }
