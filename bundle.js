@@ -81,31 +81,31 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./chatlist.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./chatlist.css":
-/*!**********************!*\
-  !*** ./chatlist.css ***!
-  \**********************/
+/***/ "./index.css":
+/*!*******************!*\
+  !*** ./index.css ***!
+  \*******************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./chatlist.css?");
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./index.css?");
 
 /***/ }),
 
-/***/ "./chatlist.js":
-/*!*********************!*\
-  !*** ./chatlist.js ***!
-  \*********************/
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _chatlist_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./chatlist.css */ \"./chatlist.css\");\n/* harmony import */ var _chatlist_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_chatlist_css__WEBPACK_IMPORTED_MODULE_0__);\n\nvar chats = JSON.parse(localStorage.getItem('chats')) || [];\nfunction saveChats() {\n  localStorage.setItem('chats', JSON.stringify(chats));\n}\nvar chatListElement = document.querySelector('.chat-list');\nfunction renderChats() {\n  chatListElement.innerHTML = '';\n  chats.forEach(function (chat) {\n    var chatItem = document.createElement('div');\n    chatItem.classList.add('chat-item');\n    var lastMessage = chat.messages.length > 0 ? chat.messages[chat.messages.length - 1].text : 'Нет сообщений';\n    chatItem.innerHTML = \"\\n            <div class=\\\"avatar\\\">\\n                <span class=\\\"material-icons\\\">person</span>\\n            </div>\\n            <div class=\\\"chat-details\\\">\\n                <div class=\\\"chat-name\\\">\".concat(chat.name, \"</div>\\n                <div class=\\\"last-message\\\">\").concat(lastMessage, \"</div>\\n            </div>\\n            <div class=\\\"chat-time\\\">\").concat(chat.messages.length > 0 ? chat.messages[chat.messages.length - 1].time : '', \"</div>\\n        \");\n    chatItem.addEventListener('click', function () {\n      window.location.href = \"index.html#chat-\".concat(chat.id);\n    });\n    chatListElement.appendChild(chatItem);\n  });\n}\nfunction createNewChat() {\n  // console.log('createNewChat вызвана');\n  var chatName = prompt('Введите название нового чата:');\n  if (chatName) {\n    var newChat = {\n      id: Date.now(),\n      name: chatName,\n      messages: []\n    };\n    chats.push(newChat);\n    saveChats();\n    renderChats();\n  }\n}\nvar createChatButton = document.querySelector('.floating-button');\nif (!createChatButton.dataset.handlerAttached) {\n  // console.log('Добавление обработчика для создания нового чата');\n  createChatButton.addEventListener('click', createNewChat);\n  createChatButton.dataset.handlerAttached = 'true';\n}\nrenderChats();\n\n//# sourceURL=webpack:///./chatlist.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.css */ \"./index.css\");\n/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_index_css__WEBPACK_IMPORTED_MODULE_0__);\n\nvar form = document.querySelector('form');\nvar input = document.querySelector('.form-input');\nvar messageList = document.querySelector('.message-list');\nvar sendButtonIcon = document.querySelector('.send-button span');\nvar messages = JSON.parse(localStorage.getItem('messages')) || [];\nwindow.addEventListener('load', loadMessages);\nform.addEventListener('submit', handleSubmit);\ninput.addEventListener('input', toggleSendButton);\nform.addEventListener('keypress', handleKeyPress);\nfunction handleSubmit(event) {\n  event.preventDefault();\n  var messageText = input.value.trim();\n  if (messageText) {\n    var message = {\n      text: messageText,\n      send: 'User',\n      time: new Date().toLocaleTimeString([], {\n        hour: '2-digit',\n        minute: '2-digit'\n      })\n    };\n    messages.push(message);\n    localStorage.setItem('messages', JSON.stringify(messages));\n    displayMessage(message);\n    input.value = '';\n    toggleSendButton();\n    scrollToBottom();\n  }\n}\nfunction handleKeyPress(event) {\n  if (event.keyCode === 13 && !event.shiftKey) {\n    event.preventDefault();\n    form.dispatchEvent(new Event('submit'));\n  }\n}\nfunction loadMessages() {\n  messages.forEach(displayMessage);\n  scrollToBottom();\n}\nfunction displayMessage(message) {\n  var messageElement = document.createElement('div');\n  messageElement.classList.add('message-from-user');\n  var messageText = document.createElement('p');\n  messageText.textContent = message.text;\n  var messageTime = document.createElement('small');\n  messageTime.classList.add('small-time-message');\n  messageTime.textContent = message.time;\n  var messageCheck = document.createElement('span');\n  messageCheck.classList.add('material-icons');\n  messageCheck.classList.add('check');\n  messageCheck.textContent = 'check';\n  messageElement.appendChild(messageText);\n  messageElement.appendChild(messageTime);\n  messageElement.appendChild(messageCheck);\n  messageList.appendChild(messageElement);\n}\nfunction scrollToBottom() {\n  messageList.scrollTop = messageList.scrollHeight;\n}\nfunction toggleSendButton() {\n  input.value.trim() ? sendButtonIcon.textContent = 'send' : sendButtonIcon.textContent = 'attach_file';\n}\n\n//# sourceURL=webpack:///./index.js?");
 
 /***/ })
 
