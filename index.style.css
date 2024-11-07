@@ -1,0 +1,110 @@
+:root {
+    --background-color: #000000;
+    --text-color: #00246B;
+    --header-background-color: #00246B;
+    --header-text-color: #CADCFC;
+    --chat-background-color: #CADCFC;
+    --chat-time-color: #555;
+    --floating-button-color: #FF4081;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Roboto Mono", monospace;
+}
+
+.middle-header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.contact-chat-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+.header-tool {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.header-tools button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--floating-button-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+.info-chat-contact {
+    font-size: 1.2em;
+    color: var(--header-text-color);
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: var(--background-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.form-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.send-button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.message-list {
+    padding: 10px;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 60px;
+}
+
+.message-item {
+    background-color: var(--chat-background-color);
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
