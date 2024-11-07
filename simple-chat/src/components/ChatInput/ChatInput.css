@@ -1,0 +1,26 @@
+.input-container {
+    display: flex;
+    padding: 10px;
+    background-color: var(--background-color);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.form-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-top: 1px solid #ccc;
+    font-size: 1em;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.send-button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+    padding: 0 10px;
+}

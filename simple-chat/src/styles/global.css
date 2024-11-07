@@ -1,0 +1,44 @@
+.middle-header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.contact-chat-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+.header-tool {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.header-tools button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--floating-button-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

@@ -3,7 +3,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const webpack = require('webpack');
 
 const SRC_PATH = path.resolve(__dirname, 'src');
 const BUILD_PATH = path.resolve(__dirname, 'build');
@@ -23,7 +22,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                include: SRC_PATH,
+                include: [SRC_PATH],
                 use: [
                     {
                         loader: 'babel-loader',
@@ -34,16 +33,24 @@ module.exports = {
                 ],
             },
             {
-                test: /\.css$/, // Правильное правило для CSS файлов
-                include: SRC_PATH,
+                test: /\.css$/,
+                include: [SRC_PATH],
+                use: [
+                    MiniCSSExtractPlugin.loader,
+                    'css-loader',
+                ],
+            },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)$/,
                 use: [
                     {
-                        loader: MiniCSSExtractPlugin.loader,
-                    },
-                    {
-                        loader: 'css-loader',
-                    },
-                ],
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
             },
         ],
     },
