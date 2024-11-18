@@ -1,0 +1,148 @@
+:root {
+    --background-color: #000000;
+    --text-color: #00246B;
+    --header-background-color: #00246B;
+    --header-text-color: #CADCFC;
+    --chat-background-color: #CADCFC;
+    --chat-time-color: #555;
+    --floating-button-color: #FF4081;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Roboto Mono", monospace;
+}
+
+.middle-header {
+    background-color: var(--header-background-color);
+    color: var(--header-text-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+.contact-chat-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    margin-right: 10px;
+}
+
+.header-tool {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.header-tools button {
+    background: none;
+    border: none;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--floating-button-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button, .header-tool {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button:hover, .header-tool:hover {
+    background-color: #ff658f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button:active, .header-tool:active {
+    transform: scale(0.9);
+}
+
+.chat-item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-item:hover {
+    background-color: #b8d5f5;
+    transform: translateY(-2px);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.message-item.new {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+
+.info-chat-contact {
+    font-size: 1.2em;
+    color: var(--header-text-color);
+}
+
+.chat-list {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 70px;
+}
+
+.chat-item {
+    background-color: var(--chat-background-color);
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-item:hover {
+    background-color: #e0e0e0;
+}
+
+.chat-details {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.chat-name {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.last-message {
+    font-size: 0.9em;
+    color: var(--text-color);
+}
+
+.chat-time {
+    color: var(--chat-time-color);
+    font-size: 0.8em;
+}
+
