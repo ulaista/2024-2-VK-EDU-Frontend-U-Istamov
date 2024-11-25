@@ -1,0 +1,16 @@
+:root {
+    --background-color: #000000;
+    --text-color: #00246B;
+    --header-background-color: #00246B;
+    --header-text-color: #CADCFC;
+    --chat-background-color: #CADCFC;
+    --chat-time-color: #555;
+    --floating-button-color: #FF4081;
+}
+
+body {
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: "Roboto Mono", monospace;
+}
