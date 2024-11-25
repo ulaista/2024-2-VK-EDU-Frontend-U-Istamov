@@ -42,3 +42,41 @@
     cursor: pointer;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
+
+.floating-button, .header-tool {
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-button:hover, .header-tool:hover {
+    background-color: #ff658f;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.floating-button:active, .header-tool:active {
+    transform: scale(0.9);
+}
+
+.chat-item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.chat-item:hover {
+    background-color: #b8d5f5;
+    transform: translateY(-2px);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%) scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0) scale(1);
+        opacity: 1;
+    }
+}
+
+.message-item.new {
+    animation: slideIn 0.5s ease-in-out;
+}

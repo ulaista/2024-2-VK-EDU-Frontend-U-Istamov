@@ -34,6 +34,10 @@ if (!chat) {
         };
         chat.messages.push(message);
         localStorage.setItem('chats', JSON.stringify(chats));
+
+        const newMessageElement = ChatMessages([message]);
+        newMessageElement.classList.add('new');
+
         messageList.appendChild(ChatMessages([message]));
     });
     app.appendChild(input);
