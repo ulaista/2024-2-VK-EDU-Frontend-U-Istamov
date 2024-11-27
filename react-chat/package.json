@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ulaista.github.io/react-chat",
+  "homepage": "https://ulaista.github.io/2024-2-VK-EDU-Frontend-U-Istamov",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
