@@ -1,0 +1,54 @@
+@use "sass:color";
+
+$header-background: #0c326f;
+$padding: 10px;
+$primary-text-color: #ffffff;
+$button-hover-color: color.scale($header-background, $lightness: -20%);
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $header-background;
+
+  @media (min-width: $tablet-width) {
+    padding: 5px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 10px;
+  }
+}
+
+.header-tool {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: $primary-text-color;
+  transition: color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    color: $button-hover-color;
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+
+.header-title {
+  font-size: 1rem;
+  font-weight: bold;
+  color: $primary-text-color;
+
+  @media (min-width: $tablet-width) {
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: $desktop-width) {
+    font-size: 1.5rem;
+  }
+}

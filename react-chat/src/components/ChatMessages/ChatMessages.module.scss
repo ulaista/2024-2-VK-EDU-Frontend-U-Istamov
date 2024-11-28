@@ -1,0 +1,88 @@
+@use "sass:color";
+
+$background-color: #f9f9f9;
+$message-sent-bg: #e0f7fa;
+$message-received-bg: #ffffff;
+$border-color: #007bff;
+$border-color-received: #ccc;
+$padding: 10px;
+$message-radius: 16px;
+$text-gray: gray;
+$container-height: 80vh;
+
+.message-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: $padding;
+  background-color: $background-color;
+  height: $container-height;
+  overflow-y: auto;
+
+  @media (min-width: 768px) {
+    height: 85vh;
+  }
+
+  @media (min-width: 1024px) {
+    height: 90vh;
+  }
+}
+
+.message-item {
+  max-width: 70%;
+  padding: $padding;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &.message-sent {
+    align-self: flex-end;
+    background-color: $message-sent-bg;
+    border: 1px solid $border-color;
+    border-radius: $message-radius $message-radius 0 $message-radius;
+
+    .message-status {
+      svg {
+        font-size: 1rem;
+        color: $border-color;
+      }
+    }
+  }
+
+  &.message-received {
+    align-self: flex-start;
+    background-color: $message-received-bg;
+    border: 1px solid $border-color-received;
+    border-radius: $message-radius $message-radius $message-radius 0;
+  }
+
+  .message-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .message-text {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  .message-time {
+    font-size: 0.8rem;
+    color: $text-gray;
+    align-self: flex-end;
+    margin-top: 5px;
+  }
+
+  .message-status {
+    margin-top: 5px;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+
+    svg {
+      font-size: 1rem;
+      color: gray;
+    }
+  }
+}
