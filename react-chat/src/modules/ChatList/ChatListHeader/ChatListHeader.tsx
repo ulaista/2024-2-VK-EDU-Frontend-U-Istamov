@@ -7,11 +7,11 @@ const ChatListHeader: React.FC = () => {
   return (
     <header className={styles['list-header']}>
       <button className={styles['header-tool']}>
-        <MenuIcon sx={{ fontSize: 32, color: 'white' }} />
+        <MenuIcon/>
       </button>
       <div className={styles['header-title']}>Messenger</div>
       <button className={styles['header-tool']}>
-        <SearchIcon sx={{ fontSize: 28, color: 'white' }} />
+        <SearchIcon/>
       </button>
     </header>
   );

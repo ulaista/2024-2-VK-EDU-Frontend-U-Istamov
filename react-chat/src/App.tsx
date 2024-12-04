@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import Chat from './pages/Chat/Chat';
+import ChatPage from './pages/Chat/Chat';
 import ChatList from './pages/ChatList/ChatList';
 import Profile from './pages/Profile/Profile';
 import UserProfile from './pages/UserProfile/UserProfile';
 import './App.scss';
 
-interface Message {
+export interface Message {
   id: number;
   text: string;
   sender: string;
@@ -14,7 +14,7 @@ interface Message {
   read?: boolean;
 }
 
-interface Chat {
+export interface Chat {
   id: number;
   name: string;
   messages: Message[];
@@ -89,7 +89,7 @@ const App: React.FC = () => {
         <Route
           path="/chat/:chatId"
           element={
-            <Chat
+            <ChatPage
               chats={chats}
               onSendMessage={handleSendMessage}
             />

@@ -14,11 +14,11 @@ const ProfileHeader: React.FC<ProfileHeaderProps> = ({ title }) => {
   return (
     <header className={styles['profile-header']}>
       <button className={styles['header-tool']} onClick={() => navigate(-1)}>
-        <ArrowBackIcon sx={{ fontSize: 24, color: 'white' }} />
+        <ArrowBackIcon/>
       </button>
       <div className={styles['header-title']}>{title}</div>
       <button className={styles['header-tool']}>
-        <DoneIcon sx={{ fontSize: 24, color: 'white' }} />
+        <DoneIcon/>
       </button>
     </header>
   );

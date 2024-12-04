@@ -4,25 +4,14 @@ import ChatHeader from '../../modules/Chat/ChatHeader/ChatHeader';
 import ChatMessages from '../../modules/Chat/ChatMessages/ChatMessages';
 import ChatInput from '../../modules/Chat/ChatInput/ChatInput';
 import styles from './Chat.module.scss';
-
-interface Message {
-  id: number;
-  text: string;
-  sender: string;
-  time: string;
-  read?: boolean;
-}
+import { Chat } from '../../App';
 
 interface ChatProps {
-  chats: {
-    id: number;
-    name: string;
-    messages: Message[];
-  }[];
+  chats: Chat[];
   onSendMessage: (chatId: number, messageText: string) => void;
 }
 
-const Chat: React.FC<ChatProps> = ({ chats, onSendMessage }) => {
+const ChatPage: React.FC<ChatProps> = ({ chats, onSendMessage }) => {
   const { chatId } = useParams<{ chatId: string }>();
   const chat = chats.find((c) => c.id === Number(chatId));
 
@@ -39,4 +28,4 @@ const Chat: React.FC<ChatProps> = ({ chats, onSendMessage }) => {
   );
 };
 
-export default Chat;
+export default ChatPage;
