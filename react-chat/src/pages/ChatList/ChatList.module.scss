@@ -14,7 +14,6 @@ $desktop-width: 1024px;
 .chat-list {
   display: flex;
   flex-direction: column;
-  gap: $container-padding;
   height: 100vh;
   background-color: $background-color;
 
@@ -29,8 +28,8 @@ $desktop-width: 1024px;
   display: flex;
   align-items: center;
   padding: $container-padding;
-  border: 1px solid $border-color;
-  border-radius: $border-radius / 2;
+  margin: 0 0.5em 0 0.5em;
+  border-radius: $border-radius;
   cursor: pointer;
   background-color: color.scale($background-color, $lightness: -10%);
   transition: background-color 0.2s ease;
@@ -91,18 +90,20 @@ $desktop-width: 1024px;
 
       svg {
         font-size: 1rem;
-        color: $primary-color;
       }
     }
   }
 }
 
 .add-chat-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   background-color: $primary-color;
   color: #fff;
@@ -121,12 +122,12 @@ $desktop-width: 1024px;
   }
 
   @media (min-width: $tablet-width) {
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
   }
 
   @media (min-width: $desktop-width) {
-    width: 70px;
-    height: 70px;
+    width: 55px;
+    height: 55px;
   }
 }

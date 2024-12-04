@@ -8,7 +8,7 @@ interface Message {
   text: string;
   sender: string;
   time: string;
-  read: boolean;
+  read?: boolean;
 }
 
 interface ChatMessagesProps {
@@ -16,17 +16,17 @@ interface ChatMessagesProps {
 }
 
 const ChatMessages: React.FC<ChatMessagesProps> = ({ messages }) => {
-  const messagesEndRef = useRef<HTMLDivElement | null>(null);
+  const messagesContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
-  }, [messages]);
+  }, [messages])
 
   return (
     <div className={styles['message-list']}>
-      {messages.map((message) => {
+      {messages.slice().reverse().map((message) => {
         const isSentByCurrentUser = message.sender === 'You';
 
         return (
@@ -50,7 +50,6 @@ const ChatMessages: React.FC<ChatMessagesProps> = ({ messages }) => {
           </div>
         );
       })}
-      <div ref={messagesEndRef} />
     </div>
   );
 };
