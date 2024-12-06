@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './ChatInput.module.scss';
 import SendIcon from '@mui/icons-material/Send';
+import InputChat from '../../../components/Input/InputChat';
 
 interface ChatInputProps {
   onMessageSubmit: (message: string) => void;
@@ -28,11 +29,8 @@ const ChatInput: React.FC<ChatInputProps> = ({ onMessageSubmit }) => {
 
   return (
     <div className={styles['input-container']}>
-      <input
-        className={styles['form-input']}
-        type="text"
-        placeholder="Message"
-        value={message}
+      <InputChat 
+        message={message}
         onChange={handleInputChange}
         onKeyPress={handleKeyPress}
       />

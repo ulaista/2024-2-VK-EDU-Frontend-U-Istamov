@@ -1,0 +1,85 @@
+@use "sass:color";
+
+$background-color: #f9f9f9;
+$input-border-color: #ccc;
+$input-border-focus: #007bff;
+$padding: 10px;
+$container-radius: 8px;
+$primary-color: #007bff;
+$button-hover: color.scale($primary-color, $lightness: -10%);
+$input-background: #ffffff;
+$input-placeholder-color: #b0b0b0;
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  background-color: $background-color;
+  border: 1px solid $input-border-color;
+
+  @media (min-width: 768px) {
+    padding: 5px;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 10px;
+  }
+}
+
+.form-input {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  font-size: 1rem;
+  margin-right: $padding;
+  outline: none;
+  background-color: $background-color;
+
+  &::placeholder {
+    color: $input-placeholder-color;
+    font-style: italic;
+  }
+
+  &:focus {
+    border-color: none;
+  }
+
+  @media (min-width: 768px) {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 15px 25px;
+    font-size: 1.2rem;
+  }
+}
+
+.send-button {
+  padding: 10px 20px;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.2rem;
+
+  &:hover {
+    background-color: $button-hover;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  @media (min-width: 768px) {
+    padding: 12px 25px;
+    font-size: 1.3rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 15px 30px;
+    font-size: 1.4rem;
+  }
+}

@@ -17,11 +17,11 @@ const ChatHeader: React.FC<ChatHeaderProps> = ({ title, avatar = 'face', onBack 
     <header className={styles['middle-header']}>
       <div className={styles['contact-chat-wrapper']}>
         <button className={`${styles['header-tool']} ${styles['back-button']}`} onClick={onBack}>
-          <ArrowBackIcon sx={{ fontSize: 24, color: 'white' }} />
+          <ArrowBackIcon/>
         </button>
         <div className={styles.avatar}>
           {avatar === '' ? (
-            <PersonIcon sx={{ fontSize: 40, color: '#ffffff' }} />
+            <PersonIcon/>
           ) : (
             <span className="">{avatar}</span>
           )}

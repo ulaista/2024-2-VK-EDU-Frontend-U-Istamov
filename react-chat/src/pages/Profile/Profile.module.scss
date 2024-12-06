@@ -1,0 +1,14 @@
+@use "sass:color";
+
+$header-background: #0c326f;
+$primary-text-color: #ffffff;
+$input-background: #f1f1f1;
+$border-color: #ddd;
+$padding: 20px;
+$tablet-width: 768px;
+
+.profile-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}

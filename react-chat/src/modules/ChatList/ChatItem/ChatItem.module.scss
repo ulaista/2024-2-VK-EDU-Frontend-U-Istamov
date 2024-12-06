@@ -11,18 +11,6 @@ $avatar-background: #e0e0e0;
 $tablet-width: 768px;
 $desktop-width: 1024px;
 
-.chat-list {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: $background-color;
-
-  @media (min-width: $tablet-width) {
-  }
-
-  @media (min-width: $desktop-width) {
-  }
-}
 
 .chat-item {
   display: flex;
